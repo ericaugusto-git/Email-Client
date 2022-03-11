@@ -1,0 +1,167 @@
+*{
+    -fx-my-background-color-color: #273040;
+	-fx-my-background-color-color-alt: #354b73;
+	-fx-my-font-color: white;
+	-fx-my-font-color-highlighted: white;
+	-fx-my-default-element-color: #283752;
+	-fx-my-error-text-fill: #690f0f;
+
+}
+
+
+.container{
+	-fx-background-color: -fx-my-background-color-color;
+}
+.infoContainer{
+    -fx-background-color: #191f2b;
+}
+.attachmentContainer{
+    -fx-background-color: #3e5675;
+}
+
+.buttonsContainer > Button:hover{
+    -fx-background-color: #50648a;
+};
+
+.errorText{
+	-fx-text-fill: -fx-my-error-text-fill;
+	-fx-font-weight: bold;
+	-fx-font-size: 13pt;
+}
+
+.big{
+   -fx-font-size: 16pt;
+}
+
+Button, CheckBox, ChoiceBox, Label, Slider, TextField, .menu-button{
+    -fx-text-fill: -fx-my-font-color;
+}
+
+Button{
+    -fx-background-color: -fx-my-default-element-color;
+}
+
+Button:hover{
+    -fx-background-color: -fx-my-background-color-color-alt;
+}
+.buttonsContainer > Button{
+    -fx-background-color: transparent;
+}
+
+ChoiceBox >*{
+    -fx-background-color: -fx-my-default-element-color;
+}
+
+
+Slider .axis{
+    -fx-tick-label-fill: -fx-my-font-color;
+}
+
+Slider .track{
+	-fx-background-color: -fx-my-default-element-color;
+}
+
+Slider .track:hover{
+    -fx-background-color: -fx-my-background-color-color-alt;
+}
+
+Slider .thumb{
+    -fx-background-color: #354b73;
+}
+
+.text-field{
+	-fx-control-inner-background: -fx-my-default-element-color;
+}
+
+/*Table View*/
+.table-view{
+	-fx-background-color: -fx-my-background-color-color;
+}
+.table-view:focused{
+	-fx-background-color: -fx-my-background-color-color;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#3f4b61 0%, #424141 100%);
+}
+.table-view .column-header{
+    -fx-background-color: transparent;
+    -fx-border-color: aliceblue;
+}
+.table-view .column-header-background .label{
+	-fx-background-color: transparent;
+	-fx-text-fill: -fx-my-font-color;
+}
+.table-view .table-cell{
+	-fx-text-fill: -fx-my-font-color;
+}
+.table-row-cell:even{
+	-fx-background-color: #263552;
+	-fx-table-cell-border-color: #667591;
+}
+.table-row-cell:odd{
+	-fx-background-color: #2a3f69;
+}
+.table-row-cell:selected {
+    -fx-background-color: #0751e6;
+}
+/*Tree view*/
+.tree-cell{
+	-fx-background-color: #191f2b;
+	-fx-text-fill: -fx-my-font-color;
+}
+.tree-cell > .tree-disclosure-node > .arrow{
+	-fx-background-color: -fx-my-font-color;
+}
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-background-color: grey;
+ }
+.tree-cell:selected{
+	-fx-background-color: #475266;
+}
+/*menus and menu items*/
+.menu-bar{
+	-fx-background-color: -fx-my-background-color-color;
+}
+.menu-bar > .container > .menu-button{
+	-fx-background-color: -fx-my-background-color-color;
+}
+
+.menu-bar > .container > .menu-button > .label{
+	-fx-text-fill: -fx-my-font-color;
+}
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: -fx-my-background-color-color-alt;
+}
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: -fx-my-font-color-highlighted;
+}
+.menu-item {
+    -fx-background-color: -fx-my-background-color-color;
+}
+.menu-item .label {
+    -fx-text-fill: -fx-my-font-color;
+}
+.menu-item:focused, .menu-item:hovered {
+    -fx-background-color: -fx-my-background-color-color-alt;
+}
+.menu-item:focused .label, .menu-item:hovered .label {
+    -fx-text-fill: -fx-my-font-color-highlighted;
+}
+.context-menu {
+    -fx-background-color: -fx-my-background-color-color;
+}
+
+
+.html-editor .button, .html-editor .toggle-button{
+    -fx-background-color: lightblue;
+}
+
+
+.addAttachmentButton{
+    -fx-background-color: lightblue;
+    -fx-text-fill: black;
+}

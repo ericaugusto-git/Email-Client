@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="749.0" styleClass="container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TreeView fx:id="mailTreeView" layoutY="31.0" prefHeight="535.0" prefWidth="176.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="31.0" />
+      <TableView fx:id="mailTableView" layoutX="176.0" layoutY="31.0" prefHeight="201.0" prefWidth="574.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="31.0">
+        <columns>
+          <TableColumn fx:id="senderCol" prefWidth="123.0" text="Sender" />
+          <TableColumn fx:id="subjectCol" prefWidth="150.0" text="Subject" />
+            <TableColumn fx:id="recipientCol" minWidth="0.0" prefWidth="137.0" text="Recipient" />
+            <TableColumn fx:id="sizeCol" prefWidth="61.0" text="Size" />
+            <TableColumn fx:id="dateCol" prefWidth="102.0" text="Date" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <WebView fx:id="mailWebView" layoutX="176.0" layoutY="225.0" prefHeight="341.0" prefWidth="574.0" style="visibility: false;" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="225.0" />
+      <AnchorPane layoutY="565.0" prefHeight="25.0" prefWidth="749.0" styleClass="infoContainer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="11.0" layoutY="4.0" style="visibility: false;" text="Loading messages..." />
+            <ProgressBar fx:id="progressBar" layoutX="127.0" layoutY="4.0" prefWidth="200.0" style="visibility: false;" />
+            <Label alignment="TOP_RIGHT" layoutX="651.0" layoutY="5.0" styleClass=".infoContainer" text="Total:" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="5.0" />
+            <Label fx:id="totalLabel" alignment="TOP_RIGHT" layoutX="687.0" layoutY="4.0" text="0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="4.0" />
+            <Label layoutX="552.0" layoutY="4.0" text="Unread:" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="5.0" />
+            <Label fx:id="unreadLabel" layoutX="601.0" layoutY="5.0" text="0" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="5.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="attachmentContainer" layoutX="176.0" layoutY="527.0" prefHeight="38.0" prefWidth="574.0" style="visibility: false;" styleClass="attachmentContainer" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <SplitMenuButton fx:id="splitMenuButton" layoutX="494.0" layoutY="7.0" mnemonicParsing="false" onAction="#saveAs" text="Save As..." AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="7.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+               </items></SplitMenuButton>
+            <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/clip.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="attachmentNameLabel" layoutX="55.0" layoutY="14.0" text="Attachment:" />
+            <Label fx:id="attachmentLabel" layoutX="34.0" layoutY="14.0" text="0" />
+         </children>
+      </AnchorPane>
+      <HBox layoutY="-2.0" prefWidth="571.0" styleClass="buttonsContainer">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addAccountAction" prefHeight="33.0" prefWidth="151.0" text="Add Account">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/add-account.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="33.0" prefWidth="6.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Separator>
+            <Button mnemonicParsing="false" onAction="#composeMessageAction" prefHeight="33.0" prefWidth="157.0" text="Write message">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/write.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="33.0" prefWidth="6.0" />
+            <Button mnemonicParsing="false" onAction="#optionsAction" prefHeight="33.0" prefWidth="134.0" text="Options">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/options.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="33.0" prefWidth="6.0" />
+            <Button mnemonicParsing="false" onAction="#showAppInfo" prefHeight="33.0" prefWidth="138.0" styleClass="infoButton" text="Information">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/information-button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Separator layoutX="568.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="33.0" prefWidth="2.0" styleClass="sp" />
+   </children>
+</AnchorPane>

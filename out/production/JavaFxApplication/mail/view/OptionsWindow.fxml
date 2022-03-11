@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="container" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="150.0" layoutY="146.0" text="Font Size" />
+      <Label layoutX="286.0" layoutY="14.0" styleClass="big" text="Options" />
+      <Label layoutX="150.0" layoutY="192.0" text="Color Theme" />
+      <Slider fx:id="fontSizePicker" layoutX="242.0" layoutY="148.0" prefHeight="14.0" prefWidth="240.0" />
+      <ChoiceBox fx:id="themePicker" layoutX="242.0" layoutY="188.0" prefHeight="25.0" prefWidth="240.0" />
+      <Button layoutX="350.0" layoutY="339.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="25.0" prefWidth="74.0" text="Cancel" />
+      <Button layoutX="470.0" layoutY="339.0" mnemonicParsing="false" onAction="#applyButton" prefHeight="25.0" prefWidth="74.0" text="Apply" />
+      <CheckBox fx:id="automaticLogin" layoutX="242.0" layoutY="231.0" mnemonicParsing="false" text="Automatic login" />
+   </children>
+</AnchorPane>
